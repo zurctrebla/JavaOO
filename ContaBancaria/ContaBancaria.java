@@ -17,8 +17,17 @@ public class ContaBancaria {
 
     }
 
-    public void adicionarDependente(String nomeDependente){ 
+    public Dependente adicionarDependente(String nomeDependente) throws LimiteDependentesException{ 
+
+        Dependente dependente = new Dependente(nomeDependente);
         
+        if(dependentes.size() < 3)
+            dependentes.add(dependente);
+        else
+            throw new LimiteDependentesException();
+            
+        return dependente;
+
     }
 
     public void movimentarConta(double valorMovimentacao, char tipoMovimentacao){
