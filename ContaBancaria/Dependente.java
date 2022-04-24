@@ -22,7 +22,7 @@ public class Dependente {
         double soma = 0;
 
         for (MovimentacaoBancaria movimentacaoBancaria : this.getMovimentacaoBancaria())
-            soma = soma + movimentacaoBancaria.getValor();     
+            soma = soma + movimentacaoBancaria.getValor();         
 
         if (soma > 1200)
             throw new LimiteMovimentacaoException();
