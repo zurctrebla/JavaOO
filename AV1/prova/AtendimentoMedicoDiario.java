@@ -108,10 +108,10 @@ class AtendimentoMedicoDiario {
 
   public void addCirurgia(CirurgiaMedica cirurgia) throws CirurgiaNaoPermitidaException, MedicoNaoPodeRealizarCirurgiaException{
 
-    if(getMedico() == "E")
-      cirurgias.add(cirurgia);
-    else
-      throw new MedicoNaoPodeRealizarCirurgiaException(); //  RESPOSTA QUESTÃO 03
+    // if(getMedico() == "E")
+    //   cirurgias.add(cirurgia);
+    // else
+    //   throw new MedicoNaoPodeRealizarCirurgiaException(); //  RESPOSTA QUESTÃO 03
 
     if(paciente.getPlanoSaude().permiteCirurgia() == true)  // RESPOSTA QUESTÃO 01
       cirurgias.add(cirurgia);
@@ -169,44 +169,46 @@ class AtendimentoMedicoDiario {
      * Questão 02
      */
     
-    if((getMedico() == "C") && ((getSintomas() == "Gripe" || getSintomas() == "Virose")))
-      consultas.add(consulta);
-    else
-      throw new MedicoNaoPodeRealizarConsultaException();
+    // if((getMedico() == "C") && ((getSintomas() == "Gripe" || getSintomas() == "Virose")))
+    //   consultas.add(consulta);
+    // else
+    //   throw new MedicoNaoPodeRealizarConsultaException();
 
     // if(getSintomas() == "Gripe" || getSintomas() == "Virose") // gripe ou virose
     // if(getMedico() == "E" && getMedico() == "E")
     // if(paciente.getSexo() == 'M')// paciente sexo masculino
 
-    if(getMedico() == "E" && ((getSintomas() == "hipertensão" || getSintomas() == "cancer de mama")))
-      consultas.add(consulta);
+    // if(getMedico() == "E" && ((getSintomas() == "hipertensão" || getSintomas() == "cancer de mama")))
+    //   consultas.add(consulta);
 
-    if(getMedico() == "E" && ((getSintomas() == "cancer de prostata")))
-      consultas.add(consulta);
+    // if(getMedico() == "E" && ((getSintomas() == "cancer de prostata")))
+    //   consultas.add(consulta);
 
     // tiposDoenca == "hipertensão";
 
-    if(paciente.getSexo() == 'M')
-      consultas.add(consulta);
+    // if(paciente.getSexo() == 'M')
+    //   consultas.add(consulta);
 
-
-      // public List<TipoDoenca> getTiposDoenca() {
-      //   return tiposDoenca;
-      // }
-
-      for (TipoDoenca tipoDoenca : getTiposDoenca()) {
-        if ((tipoDoenca.getDescricao() == "hipertensao") || (tipoDoenca.getDescricao() == "cancer de mama") ) {
-          // System.out.println(tipoDoenca);
+      for (TipoDoenca tipoDoenca : getTiposDoenca()) {    // questão 02
+        if (tipoDoenca.getDescricao().equals("virose") || tipoDoenca.getDescricao().equals("dengue")) {
+          System.out.println("tipo de doença: " + tipoDoenca.getDescricao());
+          //
         }
       }
 
-      // for (MovimentacaoBancaria movimentacaoBancaria : contaBancaria.getMovimentacaoBancaria()) {
+      for (TipoDoenca tipoDoenca : getTiposDoenca()) {    // questão 02
+        if (tipoDoenca.getDescricao().equals("hipertensao") || tipoDoenca.getDescricao().equals("cancer de mama")) {
+          System.out.println("tipo de doença: " + tipoDoenca.getDescricao());
+          //
+        }
+      }
 
-      //   System.out.println("Valor movimentado pelo titular: " + movimentacaoBancaria.getValor()); 
-      //   System.out.println("Tipo da movimentação pelo titular: " + movimentacaoBancaria.getTipo()); 
-        
-      // }
-
+      for (TipoDoenca tipoDoenca : getTiposDoenca()) {    // questão 02
+        if (tipoDoenca.getDescricao().equals("cancer de prostata")) {
+          System.out.println("tipo de doença: " + tipoDoenca.getDescricao());
+          //
+        }
+      }
 
   }
 
@@ -216,10 +218,10 @@ class AtendimentoMedicoDiario {
 
   public void addExame(ExameMedico exame) throws ExameNaoPermitidoException, MedicoNaoPodeSolicitarExameException{    
 
-    if(getMedico() == "E")
-      exames.add(exame);
-    else
-      throw new MedicoNaoPodeSolicitarExameException(); //  RESPOSTA QUESTÃO 03
+    // if(getMedico() == "E")
+    //   exames.add(exame);
+    // else
+    //   throw new MedicoNaoPodeSolicitarExameException(); //  RESPOSTA QUESTÃO 03
 
     if(paciente.getPlanoSaude().permiteExame() == true)  // RESPOSTA QUESTÃO 01
       exames.add(exame);

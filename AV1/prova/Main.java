@@ -14,7 +14,7 @@ public class Main {
                                                true,
                                                true, 
                                                true, 
-                                               20000, 
+                                               2000, 
                                                10000);
 
         Paciente paciente = new Paciente("Fabio", "A+", 20, 'M', planoSaude);  
