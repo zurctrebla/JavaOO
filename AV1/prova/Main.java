@@ -14,7 +14,7 @@ public class Main {
                                                true,
                                                true, 
                                                true, 
-                                               2000, 
+                                               20000, 
                                                10000);
 
         Paciente paciente = new Paciente("Fabio", "A+", 20, 'M', planoSaude);  
@@ -29,7 +29,7 @@ public class Main {
         atendimentoMedico.setDataAtendimento(data);
         
         try {
-            atendimentoMedico.addTipoDoenca(new TipoDoenca("Virose"));
+            atendimentoMedico.addTipoDoenca(new TipoDoenca("virose"));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
